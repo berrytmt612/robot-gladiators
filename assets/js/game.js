@@ -36,7 +36,9 @@ var fightOrSkip = function() {
 
 var fight = function(enemy) {
     while (playerInfo.health > 0 && enemy.health > 0) {
-        fightOrSkip();
+       if(fightOrSkip()) {
+           break;
+       }
       // remove enemy's health by subtracting the amount set in the playerInfo.attack variable
       var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
       
